@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/detail.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/info.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/jobdes.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/jquery-2.1.4.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/recruit.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/register.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/jquery-ui.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/table.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/home.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/modify.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/recruit.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/register.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/setup.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/index.ejs" charset="UTF-8" />
+  </component>
+</project>

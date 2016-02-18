@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>介绍</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column" >
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/recruit">招聘</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="/search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="职位/公司" required/>
+              </div> <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <% if(!login){%>
+              <li>
+                <a href="/register">注册</a>
+              </li>
+              <li>
+                <a id="modal-971814" href="#modal-container-971814" role="button" class="btn" data-toggle="modal">登录</a>
+              </li>
+              <%}else{%>
+              <li>
+                <img src="<%=url%>" class="img-circle" width="40px" height="40px">
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/home/<%=userId%>/information">个人信息</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/detail">投递详情</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/notice">通知</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="/home/logout">注销</a>
+                  </li>
+                </ul>
+              </li>
+              <%}%>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--内容-->
+    <div class="row clearfix">
+      <div class="col-md-8 column">
+        <div style="border: 1px solid skyblue;border-radius: 10px;">
+          <h3>
+            <%=results[0].rname%>
+          </h3>
+          <dl class="dl-horizontal">
+            <dt>职位名称</dt><dd><%=results[0].jname%></dd>
+            <dt>年薪</dt><dd><%=results[0].rsalary%></dd>
+            <dt>最低学历</dt><dd><%=results[0].reducation%></dd>
+            <dt>工作经验</dt><dd><%=results[0].rexperience%></dd>
+            <dt>年龄</dt><dd>不限</dd>
+            <dt>招聘人数</dt><dd><%=results[0].rnumber%></dd>
+            <dt>联系电话</dt><dd><%=results[0].rphone%></dd>
+            <dt>创建时间</dt><dd><%=results[0].rcreateTime%></dd>
+          </dl>
+        </div>
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              职位描述
+            </h3>
+          </div>
+          <div class="panel-body">
+            <%=results[0].rdescription%>
+          </div>
+        </div>
+        <a id="modal-133766" href="#modal-container-133766" role="button" class="btn" data-toggle="modal">申请职位</a>
+        <div class="modal fade" id="modal-container-133766" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel" align="center">
+                  确认简历信息
+                </h4>
+              </div>
+              <div class="modal-body">
+                <!--简历内容-->
+                <table class="table table-bordered table-hover">
+                  <tbody>
+                  <tr>
+                    <td width="20%">姓名</td><td>林立志</td>
+                  </tr>
+                  <tr class="success">
+                    <td>性别</td><td>男</td>
+                  </tr>
+                  <tr>
+                    <td>年龄</td><td>20</td>
+                  </tr>
+                  <tr class="success">
+                    <td>邮箱</td><td>1274654342@qq.com</td>
+                  </tr>
+                  <tr>
+                    <td>电话</td><td>18698662173</td>
+                  </tr>
+                  <tr class="success">
+                    <td>地址</td><td>辽宁省盘锦市</td>
+                  </tr>
+                  <tr>
+                    <td>学历</td><td>本科</td>
+                  </tr>
+                  <tr class="success">
+                    <td>工作经历</td><td>暂无</td>
+                  </tr>
+                  <tr>
+                    <td>自我介绍</td><td>我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我我就是我</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:location.href='/home/id/information'">修改信息</button>
+                <button type="button" class="btn btn-primary">提交</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 column" style="border-radius: 10px;border: 1px solid skyblue">
+        <h3>
+          <%=results[0].cname%>
+        </h3>
+        <dl>
+          <dt>公司类型</dt><dd><%=results[0].cname%></dd>
+          <dt>经营范围</dt><dd><%=results[0].cbusiness%></dd>
+          <dt>公司电话</dt><dd><%=results[0].cphone%></dd>
+          <dt>公司地址</dt><dd><%=results[0].caddress%></dd>
+          <dt>公司简介</dt><dd><%=results[0].cdescription%></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <!--登录弹窗-->
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="modal fade" id="modal-container-971814" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title" id="myModalLabel" align="center">
+                  登录
+                </h3>
+              </div>
+              <form action="/login" method="post" id="loginForm">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">邮箱</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" required  />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  <button type="submit" class="btn btn-primary">登录</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+  <script src="/javascripts/login.js"></script>
+  <script src="/javascripts/jobdes.js"></script>
+</body>
+</html>

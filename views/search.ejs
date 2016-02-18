@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>招聘列表</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/stylesheets/table.css" rel="stylesheet">
+  <link href="/stylesheets/top.css" rel="stylesheet">
+</head>
+<body id="top">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column" >
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/recruit">招聘</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="/search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="职位/公司" required/>
+              </div> <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <% if(!login){%>
+              <li>
+                <a href="/register">注册</a>
+              </li>
+              <li>
+                <a id="modal-971814" href="#modal-container-971814" role="button" class="btn" data-toggle="modal">登录</a>
+              </li>
+              <%}else{%>
+              <li>
+                <img src="<%=url%>" class="img-circle" width="40px" height="40px">
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/home/<%=userId%>/information">个人信息</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/detail">投递详情</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/notice">通知</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="/home/logout">注销</a>
+                  </li>
+                </ul>
+              </li>
+              <%}%>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--列表-->
+    <div class="col-md-12 column">
+      <table class="table table-hover table-striped" style="text-align: center;">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>职位</th>
+          <th>公司</th>
+          <th>年薪</th>
+          <th>发布时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%for(var i = 0; i <100 ;i++){%>
+        <tr>
+          <td>1</td>
+          <td>产品经理</td>
+          <td>阿里巴巴</td>
+          <td>15000 RMB</td>
+          <td>2016/1/28</td>
+        </tr>
+        <tr class="success">
+          <td>2</td>
+          <td>程序员</td>
+          <td>阿里巴巴</td>
+          <td>15000 RMB</td>
+          <td>2016/1/28</td>
+        </tr>
+        <tr class="error">
+          <td>3</td>
+          <td>攻城狮</td>
+          <td>阿里巴巴</td>
+          <td>15000 RMB</td>
+          <td>2016/1/28</td>
+        </tr>
+        <%}%>
+        </tbody>
+      </table>
+      <!--加载更多-->
+      <div class="col-md-12 column" align="center">
+        <button type="button" class="btn btn-default" style="width: 20%;">加载更多</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="modal fade" id="modal-container-971814" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title" id="myModalLabel" align="center">
+                  登录
+                </h3>
+              </div>
+              <form action="/login" method="post" id="loginForm">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">邮箱</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" required  />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  <button type="submit" class="btn btn-primary">登录</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p id="back-to-top"><a href="#top"><span></span>顶部</a></p>
+  <script src="/javascripts/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+  <script src="/javascripts/search.js"></script>
+  <script src="/javascripts/top.js"></script>
+  <script src="/javascripts/login.js"></script>
+</body>
+</html>

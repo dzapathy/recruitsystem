@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>通知</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/stylesheets/table.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column" >
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/recruit">招聘</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="/search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="职位/公司" required/>
+              </div> <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <img src="<%=url%>" class="img-circle" width="40px" height="40px">
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/home/<%=userId%>/information">个人信息</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/detail">投递详情</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/notice">通知</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="/home/logout">注销</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--按钮组-->
+        <div class="btn-group">
+          <button class="btn btn-default" type="button" onclick="location.href='/home/<%=userId%>/information'">个人信息</button>
+          <button class="btn btn-default" type="button" onclick="location.href='/home/<%=userId%>/detail'">投递详情</button>
+          <button class="btn btn-default btn-success" type="button" onclick="location.href='/home/<%=userId%>/notice'">通知</button>
+        </div>
+      </div>
+    </div>
+    <!--列表-->
+    <div class="col-md-12 column">
+      <table class="table table-hover table-striped" style="text-align: center;">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>职位</th>
+          <th>公司</th>
+          <th>是否通过</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>产品经理</td>
+          <td>阿里巴巴</td>
+          <td>否</td>
+          <td></td>
+        </tr>
+        <tr class="success">
+          <td>2</td>
+          <td>程序员</td>
+          <td>阿里巴巴</td>
+          <td>是</td>
+          <td>
+            <button class="btn btn-success btn-sm">同意</button>
+            <button class="btn btn-warning btn-sm">拒绝</button>
+          </td>
+        </tr>
+        <tr class="error">
+          <td>3</td>
+          <td>攻城狮</td>
+          <td>阿里巴巴</td>
+          <td>否</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="/javascripts/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+</body>
+</html>

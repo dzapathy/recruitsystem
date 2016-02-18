@@ -1,0 +1,16 @@
+body{
+    font-family: '微软雅黑';
+}
+th{
+    text-align: center;
+}
+tbody tr{
+    text-align: center;
+    cursor: pointer;
+}
+
+select{
+    width: 15%;
+    height: 30px;
+    font-size: 16px;
+}

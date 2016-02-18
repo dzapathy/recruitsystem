@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>个人信息</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/stylesheets/table.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/iCheck/1.0.2/skins/square/blue.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column" >
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/recruit">招聘</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="/search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="职位/公司" required/>
+              </div> <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <img src="<%=url%>" class="img-circle" id="touxiang" width="40px" height="40px">
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/home/<%=userId%>/information">个人信息</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/detail">投递详情</a>
+                  </li>
+                  <li>
+                    <a href="/home/<%=userId%>/notice">通知</a>
+                  </li>
+                  <li class="divider">
+                  </li>
+                  <li>
+                    <a href="/home/logout">注销</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--按钮组-->
+        <div class="btn-group">
+          <button class="btn btn-default btn-success" type="button" onclick="location.href='/home/<%=userId%>/information'">个人信息</button>
+          <button class="btn btn-default" type="button" onclick="location.href='/home/<%=userId%>/detail'">投递详情</button>
+          <button class="btn btn-default" type="button" onclick="location.href='/home/<%=userId%>/notice'">通知</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--个人信息-->
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="panel-group" id="panel-985552">
+          <!--基本资料-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a class="panel-title " data-toggle="collapse" data-parent="#panel-985552" href="#panel-element-42510">基本资料</a>
+            </div>
+            <div id="panel-element-42510" class="panel-collapse in">
+              <div class="panel-body">
+                <!--基本资料-->
+                <form class="form-horizontal" role="form" method="post" action="/modify/<%=userId%>/basic" id="formBasic">
+                  <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">昵称</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name" name="name" value="<%=results[0].name%>" required placeholder="必填"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">性别</label>
+                    <div class="col-sm-10">
+                      <%if(results[0].sex == "男"){%>
+                        <input type="radio" value="男" name="sex" checked >&nbsp;&nbsp;男
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" value="女" name="sex">&nbsp;&nbsp;女
+                      <%}else{%>
+                        <input type="radio" value="男" name="sex">&nbsp;&nbsp;男
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" value="女" name="sex" checked >&nbsp;&nbsp;女
+                      <%}%>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="birthday">出生日期</label>
+                    <div class="col-sm-10">
+                      <input name="birthday" id="birthday" type="date" value="<%= results[0].birthday %>" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="address">地址</label>
+                    <div class="col-sm-10">
+                      <textarea name="address" id="address" style="width: 100%;height: 50px;" placeholder="选填"><%= results[0].address%></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="education">学历</label>
+                    <div class="col-sm-10">
+                      <textarea name="education" id="education" style="width: 100%;height: 50px;" placeholder="选填"><%=results[0].education%></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="experience">工作经历</label>
+                    <div class="col-sm-10">
+                      <textarea name="experience" id="experience" style="width: 100%;height: 50px;" placeholder="选填"><%=results[0].experience%></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="description">自我介绍</label>
+                    <div class="col-sm-10">
+                      <textarea name="description" id="description" style="width: 100%;height: 70px;" placeholder="选填"><%=results[0].description%></textarea>
+                    </div>
+                  </div>
+                  <div align="right">
+                    <button type="submit" class="btn btn-default">保存修改</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--修改头像-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-985552" href="#panel-element-535707">修改头像</a>
+            </div>
+            <div id="panel-element-535707" class="panel-collapse collapse">
+              <div class="panel-body">
+                <form class="form-horizontal" role="form" method="post" action="/modify/<%=userId%>/touxiang" id="formTouxiang">
+                  <div class="form-group">
+                    <label for="url" class="col-sm-2 control-label">地址</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="url" name="url" value="<%=results[0].url%>" required placeholder="输入图片url地址"/>
+                    </div>
+                  </div>
+                  <div align="right">
+                    <a id="modal-441349" href="#modal-container-441349" role="button" class="btn btn-default" data-toggle="modal">预览</a>
+                    <button type="submit" class="btn btn-default">保存</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- 修改密码-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-985552" href="#panel-element-425110">修改密码</a>
+            </div>
+            <div id="panel-element-425110" class="panel-collapse collapse">
+              <div class="panel-body">
+                <!--修改密码-->
+                <form class="form-horizontal" role="form" method="post" action="/modify/<%=userId%>/pass" id="formPass">
+                  <div class="form-group">
+                    <label for="password_old" class="col-sm-2 control-label">原密码</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="password_old" name="password_old" required placeholder="必填"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password_new" class="col-sm-2 control-label">新密码</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="password_new" name="password_new" required placeholder="必填"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password_newSure" class="col-sm-2 control-label">确认密码</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="password_newSure" name="password_newSure" required placeholder="必填"/>
+                    </div>
+                  </div>
+                  <div align="right">
+                    <button type="submit" class="btn btn-default">保存修改</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--修改邮箱-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-985552" href="#panel-element-425210">修改邮箱</a>
+            </div>
+            <div id="panel-element-425210" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label>登录邮箱:</label>
+                <span style="color: #4dc71f;"><%=results[0].email%></span>
+              </div>
+            </div>
+          </div>
+          <!--修改电话-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-985552" href="#panel-element-425310">修改电话</a>
+            </div>
+            <div id="panel-element-425310" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label>电话:</label>
+                <span style="color: #4dc71f;"><%=results[0].phone%></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--头像弹窗-->
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="modal fade" id="modal-container-441349" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel" align="center">
+                  头像
+                </h4>
+              </div>
+              <div class="modal-body" align="center">
+                <img src="<%=results[0].url%>" id="yulan" class="img-circle">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+  <script src="/javascripts/info.js"></script>
+  <script src="//cdn.bootcss.com/iCheck/1.0.2/icheck.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('input[name=sex]').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      });
+    });
+  </script>
+</body>
+</html>

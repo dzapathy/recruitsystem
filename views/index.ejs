@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>诚聘</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/stylesheets/table.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+          <nav class="navbar navbar-default navbar-static-top" role="navigation" >
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="/recruit">招聘</a>
+                </li>
+              </ul>
+              <form class="navbar-form navbar-left" role="search" action="/search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="职位/公司" required/>
+                </div>
+                <button type="submit" id="search" class="btn btn-default">搜索</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <% if(!login){%>
+                <li>
+                  <a href="/register">注册</a>
+                </li>
+                <li>
+                  <a id="modal-971814" href="#modal-container-971814" role="button" class="btn" data-toggle="modal">登录</a>
+                </li>
+                <%}else{%>
+                <li>
+                  <img src="<%=url%>" class="img-circle" id="headImg" width="40px" height="40px">
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/home/<%=userId%>/information">个人信息</a>
+                    </li>
+                    <li>
+                      <a href="/home/<%=userId%>/detail">投递详情</a>
+                    </li>
+                    <li>
+                      <a href="/home/<%=userId%>/notice">通知</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                      <a href="/home/logout">注销</a>
+                    </li>
+                  </ul>
+                </li>
+                <%}%>
+              </ul>
+            </div>
+          </nav>
+          <div class="carousel slide" id="carousel-804892">
+            <ol class="carousel-indicators">
+              <li data-slide-to="0" data-target="#carousel-804892">
+              </li>
+              <li data-slide-to="1" data-target="#carousel-804892" class="active">
+              </li>
+              <li data-slide-to="2" data-target="#carousel-804892">
+              </li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <img alt="" width="1364px" src="http://www.uc.cn/a/job/topic/images/design.jpg" />
+                <div class="carousel-caption" style="color: black;">
+                  <h4>
+                    诚聘网
+                  </h4>
+                  <p>
+                    选择诚聘,前程无忧
+                  </p>
+                </div>
+              </div>
+              <div class="item">
+                <img alt="" width="1364px" src="http://www.allbestchairs.com/upload/images/products/ki-wave/wv-banner.jpg" />
+                <div class="carousel-caption" style="color: black;">
+                  <h4>
+                    诚聘网
+                  </h4>
+                  <p>
+                    致力于为用户打造干净，整洁，易于使用的平台.
+                  </p>
+                </div>
+              </div>
+              <div class="item">
+                <img alt="" width="1364px" src="http://www.allbestchairs.com/upload/images/products/ki-wave/wv-banner.jpg" />
+                <div class="carousel-caption" style="color: black;">
+                  <h4>
+                    诚聘网
+                  </h4>
+                  <p>
+                    Committed to creating a clean, clean, easy to use platform for the user.                  </p>
+                </div>
+              </div>
+            </div> <a class="left carousel-control" href="#carousel-804892" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-804892" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-4 column">
+          <h2>
+            招聘
+          </h2>
+          <p>
+            招聘信息一应俱全,保证您发现满意的工作.<br>
+            The recruitment information is available, to ensure that you find satisfactory work.
+          </p>
+          <p>
+            <a class="btn" href="/recruit">View details »</a>
+          </p>
+        </div>
+        <div class="col-md-4 column">
+          <h2>
+            查询
+          </h2>
+          <p>
+            细致的分类,让您精准查询,不在海底捞针.<br>
+            A detailed classification, allowing you to accurately check, not in the dredge for a needle in the sea.
+          </p>
+          <p>
+            <a class="btn" href="javascript:$('#search').click();">View details »</a>
+          </p>
+        </div>
+        <div class="col-md-4 column">
+          <h2>
+            管理
+          </h2>
+          <p>
+            简单易用的信息管理,然您轻松使用.<br>
+            Simple and easy to use information management, although you are easy to use.
+          </p>
+          <p>
+            <a class="btn" href="home/<%=userId%>/information">View details »</a><!--待修改-->
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+          <div class="modal fade" id="modal-container-971814" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 class="modal-title" id="myModalLabel" align="center">
+                    登录
+                  </h3>
+                </div>
+                <form action="/login" method="post" id="loginForm">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">邮箱</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" required  />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" required />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  <button type="submit" class="btn btn-primary">登录</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+    <script src="/javascripts/login.js"></script>
+  </body>
+</html>

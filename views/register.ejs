@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>诚聘注册</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/stylesheets/table.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/iCheck/1.0.2/skins/square/blue.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix" id="topPoint">
+      <div class="col-md-12 column">
+        <div class="alert alert-dismissable alert-info">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <strong>提示!</strong>如果您是普通用户,请选择'普通用户注册';如果您是企业用户,请选择'HR用户注册'
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/">主页</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/recruit">招聘</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="/search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="职位/公司" required/>
+              </div> <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+          </div>
+        </nav>
+        <div class="tabbable" id="tabs-55955">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#panel-18798" data-toggle="tab" style="cursor: pointer">普通用户注册</a>
+            </li>
+            <li>
+              <a href="#panel-683160" data-toggle="tab" style="cursor: pointer">HR用户注册</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="panel-18798">
+              <!--普通用户注册-->
+              <form class="form-horizontal" role="form" method="post" action="/register/putong" id="formPutong">
+              <div class="row clearfix">
+                <div class="col-md-12 column">
+                  <div class="panel-group" id="panel-106715">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <a class="panel-title" data-toggle="collapse" data-parent="#panel-106715" href="#panel-element-970969">基本信息</a>
+                      </div>
+                      <div id="panel-element-970969" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <!--必填内容-->
+                            <div class="form-group">
+                              <label for="name1" class="col-sm-2 control-label">昵称</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name1" name="name1" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="email1" class="col-sm-2 control-label">邮箱</label>
+                              <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email1" name="email1" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="password1" class="col-sm-2 control-label">密码</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" id="password1" name="password1" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="passwordSure1" class="col-sm-2 control-label">确认密码</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" id="passwordSure1" name="passwordSure1" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">性别</label>
+                                <div class="col-sm-10">
+                                  <input type="radio" value="男" name="sex1" checked="checked">&nbsp;&nbsp;男
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" value="女" name="sex1">&nbsp;&nbsp;女
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <a class="panel-title" data-toggle="collapse" data-parent="#panel-106715" href="#panel-element-483659">详细信息</a>
+                      </div>
+                      <div id="panel-element-483659" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <!--选填内容-->
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="phone1">电话</label>
+                            <div class="col-sm-10">
+                              <input name="phone1" id="phone1" type="text" placeholder="必填" required class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="birthday1">出生日期</label>
+                            <div class="col-sm-10">
+                              <input name="birthday1" id="birthday1" type="date" placeholder="选填" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="address1">地址</label>
+                            <div class="col-sm-10">
+                              <textarea name="address1" id="address1"  style="width: 100%;height: 50px;" placeholder="选填"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="education1">学历</label>
+                            <div class="col-sm-10">
+                              <textarea name="education1" id="education1" style="width: 100%;height: 50px;" placeholder="选填"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="experience1">工作经历</label>
+                            <div class="col-sm-10">
+                              <textarea name="experience1" id="experience1" style="width: 100%;height: 50px;" placeholder="选填"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="description1">自我介绍</label>
+                            <div class="col-sm-10">
+                              <textarea name="description1" id="description1" style="width: 100%;height: 70px;" placeholder="选填"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row clearfix" align="right">
+                    <div class="col-md-12 column">
+                      <button type="submit" id="regiter1" class="btn btn-default btn-info">注册</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div>
+            <div class="tab-pane" id="panel-683160">
+              <!--HR用户注册-->
+              <form class="form-horizontal" role="form" method="post" action="/register/hr" id="formHR">
+                <div class="row clearfix">
+                  <div class="col-md-12 column">
+                    <div class="panel-group" id="panel-106716">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="panel-title" data-toggle="collapse" data-parent="#panel-106716" href="#panel-element-97096">个人信息</a>
+                        </div>
+                        <div id="panel-element-97096" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <label for="name2" class="col-sm-2 control-label">昵称</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name2" name="name2" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="email2" class="col-sm-2 control-label">邮箱</label>
+                              <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email2" name="email2" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="password2" class="col-sm-2 control-label">密码</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" id="password2" name="password2" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="passwordSure2" class="col-sm-2 control-label">确认密码</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" id="passwordSure2" name="passwordSure2" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label">性别</label>
+                              <div class="col-sm-10">
+                                <input type="radio" value="男" name="sex2" checked="checked">&nbsp;&nbsp;男
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" value="女" name="sex2">&nbsp;&nbsp;女
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="phone2">电话</label>
+                              <div class="col-sm-10">
+                                <input name="phone2" id="phone2" type="text" placeholder="必填" required class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="birthday2">出生日期</label>
+                              <div class="col-sm-10">
+                                <input name="birthday2" id="birthday2" type="date" placeholder="必填" required class="form-control">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <a class="panel-title" data-toggle="collapse" data-parent="#panel-106716" href="#panel-element-483658">公司信息</a>
+                        </div>
+                        <div id="panel-element-483658" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <!--公司-->
+                            <div class="form-group">
+                              <label for="companyname" class="col-sm-2 control-label">公司名称</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="companyname" name="companyname" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="companytype" class="col-sm-2 control-label">公司类型</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="companytype" name="companytype" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="companyphone" class="col-sm-2 control-label">公司电话</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="companyphone" name="companyphone" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="business" class="col-sm-2 control-label">经营范围</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="business" name="business" required placeholder="必填"/>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="companyaddress">公司地址</label>
+                              <div class="col-sm-10">
+                                <textarea name="companyaddress" id="companyaddress" style="width: 100%;height: 50px;" placeholder="必填" required></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="companydescription">公司简介</label>
+                              <div class="col-sm-10">
+                                <textarea name="companydescription" id="companydescription" style="width: 100%;height: 70px;" placeholder="必填" required></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row clearfix" align="right">
+                      <div class="col-md-12 column">
+                        <button type="submit" id="regiter2" class="btn btn-default btn-info">注册</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+  <script src="/javascripts/register.js"></script>
+  <script src="//cdn.bootcss.com/iCheck/1.0.2/icheck.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('input[type=radio]').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      });
+    });
+  </script>
+</body>
+</html>
